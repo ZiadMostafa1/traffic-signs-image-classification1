@@ -20,10 +20,8 @@ if uploaded_file is not None:
     img = Image.open(uploaded_file)
 
     # Convert the image to RGB
-    rgb_img = img.convert('RGB')
-
-    # Convert the image to a numpy array
-    image = np.array(rgb_img)
+    image = img.convert('RGB')
+    
     st.image(image, caption='Uploaded Image.', use_column_width=True)
     st.write("")
     st.write("Classifying...")
