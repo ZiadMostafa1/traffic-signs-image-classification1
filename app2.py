@@ -10,7 +10,13 @@ st.title('Traffic Sign Classifier')
 
 uploaded_file = st.file_uploader("Choose an image...", type=["jpg", "png"])
 if uploaded_file is not None:
-    image = Image.open(uploaded_file)
+    img = Image.open('image.png')
+
+    # Convert the image to RGB
+    rgb_img = img.convert('RGB')
+
+    # Convert the image to a numpy array
+    image = np.array(rgb_img)
     st.image(image, caption='Uploaded Image.', use_column_width=True)
     st.write("")
     st.write("Classifying...")
