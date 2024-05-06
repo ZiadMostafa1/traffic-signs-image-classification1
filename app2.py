@@ -3,6 +3,13 @@ from PIL import Image
 import numpy as np
 from tensorflow.keras.models import load_model
 
+import os
+
+if os.path.isfile('traffic_classifier.h5'):
+    print("File exists")
+else:
+    print("File does not exist")
+
 # Load the saved model
 model = load_model('traffic_classifier.h5')
 
